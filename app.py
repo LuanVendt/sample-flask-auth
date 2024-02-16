@@ -30,7 +30,7 @@ def login():
                 login_user(user)
                 return jsonify({'message': 'Autenticação realizada com sucesso!'}), 200
 
-    return jsonify({'message': 'Credenciais inválidas'}), 400
+    return jsonify({'message': 'Credenciais inválidas'}), 401
 
 @app.route('/logout', methods=['GET'])
 @login_required
@@ -52,7 +52,7 @@ def create_user():
 
          return jsonify({'message': 'Usuário cadastrado com sucesso'}), 200
     
-    return jsonify({'message': 'Credenciais inválidas'}), 400
+    return jsonify({'message': 'Credenciais inválidas'}), 401
 
 @app.route('/hello-world', methods=['GET'])
 def hello_world():
